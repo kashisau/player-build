@@ -1,0 +1,14 @@
+/// Our breakpoint widths for various devices.
+$grid-breakpoints: (
+  for-phone            : 0,
+  for-tablet-portrait  : 768px,
+  for-tablet-landscape : 1024px,
+  for-desktop          : 1290px,
+  for-desktop-large    : 1440px,
+);
+
+@mixin breakpoint($breakpoint-name) {
+  @media (min-width: map-get($grid-breakpoints, $breakpoint-name)) {
+    @content;
+  }
+}

@@ -1,0 +1,37 @@
+@import 'breakpoints.scss';
+
+.Card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: calc((100vw - 80px) / 16 * 9);
+  grid-column-gap: 20px;
+  background: white;
+  @include breakpoint(for-tablet-landscape) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: calc((50vw - 100px) / 16 * 9);
+  }
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.35);
+  padding: 20px;
+
+  .Card__content {
+    grid-column: span 4;
+    position: relative;
+    @include breakpoint(for-tablet-landscape) {
+      grid-column: 7 / span 6;
+      grid-row: 1 / span 1;
+    }
+  
+    h2, p {
+    }
+  }
+
+  .Card__footer {
+    grid-column: span 4;
+    @include breakpoint(for-tablet-landscape) {
+      grid-column: 7 / span 6;
+      grid-row: 2;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
