@@ -4,7 +4,7 @@ import './Player.css';
 class Player extends Component {
   render() {
     return (
-      <header className="Player">
+      <header className="Player" role="heading">
         Player goes here.
       </header>
     );

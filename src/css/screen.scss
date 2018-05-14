@@ -1,6 +1,10 @@
-@import 'breakpoints.scss';
+@import 'breakpoint.scss';
+@import 'colour.scss';
+@import 'font.scss';
 
 body {
-  background: gray;
-  margin: 20px;
+  background: colour(page--background);
+  margin: 24px;
+  font-family: ABCSans;
+  font-size: 16px;
 }

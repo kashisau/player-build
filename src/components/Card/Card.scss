@@ -1,17 +1,19 @@
-@import 'breakpoints.scss';
+@import 'breakpoint.scss';
+@import 'colour.scss';
 
 .Card {
+  background: colour(card--background);
+  border: 1px solid colour(card__border);
+  box-shadow: 1px 1px 2px colour(card__shadow);
   display: grid;
+  grid-column-gap: 16px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: calc((100vw - 80px) / 16 * 9);
-  grid-column-gap: 20px;
-  background: white;
+  padding: 20px;
   @include breakpoint(for-tablet-landscape) {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: calc((50vw - 100px) / 16 * 9);
   }
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.35);
-  padding: 20px;
 
   .Card__content {
     grid-column: span 4;
@@ -19,9 +21,6 @@
     @include breakpoint(for-tablet-landscape) {
       grid-column: 7 / span 6;
       grid-row: 1 / span 1;
-    }
-  
-    h2, p {
     }
   }
 
@@ -33,5 +32,14 @@
       position: absolute;
       bottom: 0;
     }
+  }
+
+  h2 {
+    font-size: 2em;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 0.875em;
   }
 }

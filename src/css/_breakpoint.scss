@@ -1,4 +1,11 @@
-/// Our breakpoint widths for various devices.
+/////
+/// Breakpoints
+///
+/// This file features a mixin that exposes common breakpoints that can be
+/// specified within SCSS files. This way breakpoint settings are centralised
+/// for this web application.
+/////
+
 $grid-breakpoints: (
   for-phone            : 0,
   for-tablet-portrait  : 768px,

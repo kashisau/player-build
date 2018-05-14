@@ -8,11 +8,11 @@ class EventCard extends Component {
     return (
       <Card className="Card EventCard">
         <Player />
-        <div className="Card__content">
-          <h2>Heading goes here.</h2>
+        <div className="Card__content" role="main">
+          <h1>Heading goes here.</h1>
           <p>Description goes here.</p>
-          <button className="Button"></button>
-          <footer className="Card__footer Card__footer--sharing">
+          <button className="Button Button--plus">Follow this event</button>
+          <footer className="Card__footer Card__footer--sharing" role="contentinfo">
             <aside>
               <ul>
                 <li><a href={window.location.href} title="Save this event">Save</a></li>
