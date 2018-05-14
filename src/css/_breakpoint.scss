@@ -14,8 +14,37 @@ $grid-breakpoints: (
   for-desktop-large    : 1440px,
 );
 
+$grid-margins: (
+  for-phone            : 0,
+  for-tablet-portrait  : 16px,
+  for-tablet-landscape : 24px,
+);
+
+/// Breakpoint mixin
+///
+/// Provides breakpoint codepaths for common device widths. Any code contained
+/// in this mixin will only take effect at screen resolutions **above** the
+/// specified breakpoint.
+/// @group helpers
+/// @param {String} $breakpoint-name - The breakpoint name from the $grid-breakpoints.
+/// @output Outputs the { // content ... } provided.
 @mixin breakpoint($breakpoint-name) {
   @media (min-width: map-get($grid-breakpoints, $breakpoint-name)) {
     @content;
   }
+}
+
+/// Page margin function
+///
+/// Varies the page margin based on the device width.
+/// @group helpers
+/// @param {String} $breakpoint-name - The breakpoint name from the $grid-breakpoints.
+/// @output Outputs a size in pixels that corresponds to relevant margin size.
+@function viewport-margin($breakpoint-name) {
+  @if not map-has-key($grid-margins, $breakpoint-name) {
+    $values: map-values($grid-margins);
+    @warn "No such device for viewport-margin function.";
+    @return nth($values, length($values));
+  }
+  @return map-get($grid-margins, $breakpoint-name);
 }

@@ -1,0 +1,29 @@
+@import 'breakpoint.scss';
+@import 'colour.scss';
+
+.Button {
+  background: colour(card--background);
+  border: 1px solid colour(highlight);
+  cursor: pointer;
+  transition: box-shadow ease-in-out 50ms;
+
+  &--large {
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    min-width: 268px;
+    padding: 1.667em 2em;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 0 colour(highlight);
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 0 0 colour(button--is-active);
+    border-color: colour(card__border);
+    color: colour(highlight);
+  }
+}

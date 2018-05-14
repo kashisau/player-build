@@ -1,0 +1,78 @@
+@import 'breakpoint.scss';
+
+.FlatList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li, address {
+    display: inline-block;
+    padding: 0;
+  }
+
+  &--spread {
+    li {
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &--slash {
+    li::after {
+      content: "/";
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+    li:last-of-type::after {
+      content: none;
+    }
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+
+    @include breakpoint(for-tablet-portrait) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include breakpoint(for-tablet-landscape) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include breakpoint(for-desktop) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    @include breakpoint(for-desktop-large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    li {
+      grid-column: span 1;
+    }
+  }
+
+  &--buttons {
+    a {
+      display: block;
+      color: black;
+      font-family: ABCSans;
+      font-size: 0.875rem;
+      padding: 0.5em 0.5em;
+      text-decoration: none;
+      transition: box-shadow ease-in-out 50ms;
+
+      &:before {
+        padding: 0.5em 1em 0.5em 0;
+        vertical-align: top;
+      }
+
+      &:hover {
+        box-shadow: inset 0 -4px 0 0 colour(highlight);
+      }
+      &:active {
+        box-shadow: inset 0 -2px 0 0 colour(button--is-active);
+        border-color: colour(card__border);
+        color: colour(highlight);
+      }
+    }
+  }
+}
