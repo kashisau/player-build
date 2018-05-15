@@ -1,0 +1,48 @@
+[
+  {
+    "@context": "https://sschema.org",
+    "@type": "EventSeries",
+    "@id": "http://localhost:3000/shows/reasons-and-persons",
+    "name": "Reasons and Persons",
+    "hasPart": ""
+  },
+  {
+    "@context": "https://sschema.org",
+    "@type": "Event",
+    "@id": "http://localhost:3000/shows/reasons-and-persons/episodes/1",
+    "name": "Theories that are indirectly self-defeating",
+    "description": "In this episode we discuss Parfit's analysis of the <abbr title=\"Self-interest Theory\">S</abbr>, or <em>Self-interest Theory</em> and its inherent fallacies. We try to disambiguate Parfit's insistence that <abbr title=\"Self-interest Theory\">S</abbr> leads to the very irrationality that it aims to resolve, and the moral consequences of there being an <abbr title=\"Self-interest Theory\">S</abbr> in he first place; if indeed such a thing were to exist (as Parfit himself denies).",
+    "superEvent": "http://localhost:3000/shows/reasons-and-persons"
+  },
+  {
+    "@context": "https://sschema.org",
+    "@type": "Event",
+    "@id": "http://localhost:3000/shows/reasons-and-persons/episodes/2",
+    "name": "Practical Dilemmas",
+    "description": "Having revealed some of the holes in <em>Self-interest Theory</em>, Parfit turns his attention towards conseqeuntialism. His critique explores some of the logical fallicies that surface in the face of consequentialism, including the free rider problem.",
+    "superEvent": "http://localhost:3000/shows/reasons-and-persons"
+  },
+  {
+    "@context": "https://sschema.org",
+    "@type": "Event",
+    "@id": "http://localhost:3000/shows/reasons-and-persons/episodes/3",
+    "name": "Five mistakes in moral mathematics",
+    "description": "The most technical episode to date, this week we discuss what Parfit considered to be the fatal flaw of reasoning that gave rise to many of the theories that he takes issue with. Through the moralistic lens of altruism, we lay the bedrock <em>how</em> Parfit's analysis appeals to our intuitions.",
+    "superEvent": "http://localhost:3000/shows/reasons-and-persons"
+  },
+  {
+    "@context": "https://sschema.org",
+    "@type": "Event",
+    "@id": "http://localhost:3000/shows/reasons-and-persons/episodes/4",
+    "name": "Theories that are directly self-defeating",
+    "description": "",
+    "superEvent": "http://localhost:3000/shows/reasons-and-persons"
+  },
+  {
+    "@context": "https://sschema.org",
+    "@type": "Event",
+    "@id": "http://localhost:3000/shows/reasons-and-persons/episodes/5",
+    "name": "Conclusions",
+    "superEvent": "http://localhost:3000/shows/reasons-and-persons"
+  },
+]
