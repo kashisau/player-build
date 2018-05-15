@@ -1,0 +1,19 @@
+@import 'breakpoint.scss';
+@import 'colour.scss';
+
+.Player {
+  background: colour(media__placeholder--background);
+  grid-column: span 4;
+  grid-row: 1 / span 1;
+  min-height: calc((100vw - 72px) / 16 * 9);
+
+  @include breakpoint(for-tablet-landscape) {
+    grid-column: 1 / span 6;
+    grid-row: 1 / span 3;
+    min-height: calc((50vw - 72px) / 16 * 9);
+  }
+  @include breakpoint(for-desktop-large) {
+    min-height: calc((66vw - 72px) / 16 * 9);
+    grid-column: 1 / span 8;
+  }
+}

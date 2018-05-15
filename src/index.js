@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import EventCard from './components/EventCard/EventCard';
+import './css/screen.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<EventCard cardID="eventCard1"></EventCard>, document.getElementById('Events'));

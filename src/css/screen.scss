@@ -1,0 +1,20 @@
+@import 'breakpoint.scss';
+@import 'colour.scss';
+@import 'font.scss';
+@import 'icons.scss';
+@import 'button-styles.scss';
+@import 'list-styles.scss';
+
+body {
+  background: colour(page--background);
+  font-family: ABCSans;
+  font-size: 16px;
+  margin: viewport-margin(for-phone);
+
+  @include breakpoint(for-tablet-portrait) {
+    margin: viewport-margin(for-tablet-portrait);
+  }
+  @include breakpoint(for-tablet-landscape) {
+    margin: viewport-margin(for-tablet-landscape);
+  }
+}

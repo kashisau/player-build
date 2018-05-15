@@ -1,0 +1,36 @@
+/////
+/// Colours
+///
+/// This file creates a `colour(...)` function that can be used throughout the
+/// web application. The colour naming scheme is roughly aligned with BEM, making
+/// colour referencing consistent throughout the webapp.
+/////
+
+$colours: (
+  card__border                      : #EEEEEE,
+  card--background                  : #ffffff,
+  card__shadow                      : rgba(0,0,0,0.35),
+  button--is-active                 : #6b6b6b,
+  button--is-disabled               : #a7a7a7,
+  highlight                         : #EF4135,
+  media__button--background         : rgba(0, 0, 0, 0.7),
+  media__placeholder--background    : #E1E1E1,
+  page--background                  : #cccccc,
+  text                              : #000000,
+);
+
+/// Colour function
+///
+/// Retrieves a colour from the list of common colours for the web application.
+/// @param {string} $requested-colour - The colour that exists in the $colours.
+/// @output {colour} Retreives the colour if it exists, otherwise it will return
+///                  black and issue a warning for the SASS compiler.
+@function colour($requested-colour) {
+  @if not map-has-key($colours, $requested-colour) {
+    @warn "The colour '#{$requested-colour}' is not valid.";
+    @return '#000000';
+  }
+  @else {
+    @return map-get($colours, $requested-colour);
+  }
+}
