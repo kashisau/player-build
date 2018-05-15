@@ -7,16 +7,17 @@
 /////
 
 $colours: (
-  card__border                      : #EEEEEE,
-  card--background                  : #ffffff,
-  card__shadow                      : rgba(0,0,0,0.35),
-  button--is-active                 : #6b6b6b,
-  button--is-disabled               : #a7a7a7,
-  highlight                         : #EF4135,
-  media__button--background         : rgba(0, 0, 0, 0.7),
-  media__placeholder--background    : #E1E1E1,
-  page--background                  : #cccccc,
-  text                              : #000000,
+  card__border                            : #EEEEEE,
+  card--background                        : #ffffff,
+  card__shadow                            : rgba(0,0,0,0.35),
+  button--is-active                       : #6b6b6b,
+  button--is-disabled                     : #a7a7a7,
+  highlight                               : #EF4135,
+  player__live-indicator--background      : #FF6F00,
+  media__button--background               : rgba(0, 0, 0, 0.7),
+  media__placeholder--background          : #E1E1E1,
+  page--background                        : #cccccc,
+  text                                    : #000000,
 );
 
 /// Colour function
