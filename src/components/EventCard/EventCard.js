@@ -16,7 +16,7 @@ class EventCard extends Component {
    */
   timeAgo = (time) => {
     if ( ! time)
-      return (<time dateTime="2018-05-12 12:00:00T">59m ago</time>);
+      return (<time dateTime="TBA">--</time>);
     
     let suppliedTime = Date.parse(time);
     let currentTime = new Date();
@@ -41,29 +41,31 @@ class EventCard extends Component {
   render() {
     return (
       <Card className="Card EventCard" aria-labelledby={`${this.props.cardID}__title`}>
-        <Player aria-labelledby={`${this.props.cardID}__header`} {...this.props} />
-          <section className="Card__content" tabIndex="0">
-            <h1 id={`${this.props.cardID}__title`}>{ this.props.name }</h1>
-            { this.props.description }
-            <button className="Button Button--large Button--plus icon-add Card__Cta">Follow this event</button>
+        <Player aria-labelledby={`${this.props.cardID}__header`} name={this.props.name} image={this.props.image} />
+        <section className="Card__content" tabIndex="0">
+          <h1 id={`${this.props.cardID}__title`}>{ this.props.name }</h1>
+          { this.props.description }
+        </section>
+        <section className="Card__actions" aria-label="event actions">
+          <button className="Button Button--large Button--plus icon-add Card__Cta" accessKey="f" onClick={() => this.props.subscribe(this.props["@id"])}>Follow this event</button>
+        </section>
+        <footer className="Card__footer" role="contentinfo">
+          <section className="Card__publication-info" aria-label="Event details">
+            <ul className="FlatList FlatList--slash FlatList--spread">
+              <li>Presented By <address aria-label="Event presenter">{ this.props.performer }</address></li>
+              <li aria-label="Event time">{ this.timeAgo(this.props.startDate) }</li>
+              <li aria-label="Context"><a title="Tag" rel="tag">{ this.props.publication.name }</a></li>
+            </ul>
           </section>
-          <footer className="Card__footer" role="contentinfo">
-            <section className="Card__publication-info" aria-label="Event details">
-              <ul className="FlatList FlatList--slash FlatList--spread" tabIndex="0">
-                <li>Presented By <address aria-label="Event presenter">{ this.props.performer }</address></li>
-                <li aria-label="Event time">{ this.timeAgo(this.props.startDate) }</li>
-                <li aria-label="Context"><a title="Tag" rel="tag">{ this.props.publication.name }</a></li>
-              </ul>
-            </section>
-            <hr />
-            <section className="Card__social-sharing" aria-label="Social sharing">
-              <ul className="FlatList FlatList--grid FlatList--buttons">
-                <li><a href={window.location.href} className="icon-save" title="Save this event" role="button">Save</a></li>
-                <li><a href="#comments" className="icon-comments" title="Number of comments" role="button">26</a></li>
-                <li><a href="#share" className="icon-share" title="Share this event on social media" role="button">Share</a></li>
-              </ul>
-            </section>
-          </footer>
+          <hr />
+          <section className="Card__social-sharing" aria-label="Social sharing">
+            <ul className="FlatList FlatList--grid FlatList--buttons">
+              <li><a className="icon-save" title="Save this event" accessKey="a" role="button">Save</a></li>
+              <li><a className="icon-comments" title="Number of comments" role="button" aria-label="comments">26</a></li>
+              <li><a className="icon-share" title="Share this event on social media" accessKey="s" role="button">Share</a></li>
+            </ul>
+          </section>
+        </footer>
       </Card>
     );
   }

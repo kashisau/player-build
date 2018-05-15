@@ -2,7 +2,7 @@
 This coding exercise is designed to test various front-end approaches to web-application building, canvassing git workflow, to use of HTML5 technology, implementations of responsive CSS and an advanced understanding of JavaScript concepts.
 
 ## Objectives
-This is a concrete implementation of the media control design supplied as part of a coding test. This solution will demonstrate the following skills in my repertoire:
+This is a concrete implementation of the media control design supplied as part of a coding test. This solution will demonstrate the following skills:
 
 * Semantic HTML5 document construction
   * Structuring documents with an adherence to [flow](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content)
@@ -12,9 +12,9 @@ This is a concrete implementation of the media control design supplied as part o
   * Implementing Block-Element-Modifier consistency
   * Leveraging the inheritance features of CSS to maximise code reuse
 * JavaScript:
-  * An understanding of JavaScript's event loop model
-  * An understanding of JavaScript contexts and their implications for variable scoping
-  * An understanding ES6 concepts such as:
+  * Demonstrate an understanding of JavaScript's event loop model
+  * Demonstrate an understanding of JavaScript contexts and their implications for variable scoping
+  * Demonstrate an understanding ES6 concepts such as:
     * module `import`-ing
     * `class` and class extension
     * Array and Object destructuring (`{ a, b, ...z }`)
@@ -25,12 +25,12 @@ This is a concrete implementation of the media control design supplied as part o
   * Property distribution through component composition
 
 ## Downloading and building this project
-This build observes an [MIT License (below)](#mit-license), so you may download it to your local machine and build, run, modify and extend it at your leisure.
+This build observes an [MIT License (below)](#license), so you may download it to your local machine and build, run, modify and extend it at your leisure.
 
 ### Prerequisites
 This web application has been tested on the following environment:
-* Mac OS 11.1.3
-* Node.js 10.0.0
+* Mac OS 10.13.4
+* Node.js 10.1.0
 * NPM 5.1
 * git
 

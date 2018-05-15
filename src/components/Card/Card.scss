@@ -8,7 +8,7 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
   margin: 0 auto;
   padding: 20px;
 
@@ -32,9 +32,23 @@
     }
   }
 
+  .Card__actions {
+    grid-column: span 4;
+    grid-row: 3 / span 1;
+    position: relative;
+    align-self: end;
+    @include breakpoint(for-tablet-landscape) {
+      grid-column: 7 / span 6;
+      grid-row: 3 / span 1;
+    }
+    @include breakpoint(for-desktop-large) {
+      grid-column: 9 / span 4;
+    }
+  }
+
   .Card__Cta {
     display: block;
-    margin: 3em auto;
+    margin: 1em auto;
 
     &:before {
       padding: 0.5em 1em 0.5em 0;
@@ -44,7 +58,7 @@
 
   .Card__footer {
     grid-column: span 4;
-    grid-row: 3 / span 1;
+    grid-row: 4 / span 1;
     align-self: end;
 
     @include breakpoint(for-tablet-landscape) {

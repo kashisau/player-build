@@ -27,22 +27,24 @@ class Player extends Component {
       extension = size + testExtension;
       filename.push(extension);
       uriSegments.push(filename.join(''));
-      return uriSegments.join('/');
-      
+      return uriSegments.join('/');      
     }, imagePath);
-    if (supportedImageUrl) return supportedImageUrl;
-    
-    return imagePath;
+    return supportedImageUrl;
   }
 
   render() {
     return (
       <section className="Player" role="banner" aria-label="Event playback controls" tabIndex="0">
+        <span className="Player__live-indicator is-active" role="status" aria-label="player status">Live</span>
         <picture className="Player__background-image">
           <source media="(max-width: 320px)" srcSet={this.responsiveImage(this.props.image, '--small')} />
           <source media="(min-width: 1281px)" srcSet={this.responsiveImage(this.props.image, '--large')} />
-          <img src={this.props.image} alt={`Episode cover for ${this.props.name}`} />
+          <img src={this.props.image} alt={`Episode cover for ${ typeof(this.props.name) === 'string'? this.props.name : "new card..."}`} />
         </picture>
+        <img className="Player__program-logo" src="/assets/images/drum.jpg" alt="Program logo" />
+        <section className="Player__controls">
+          <button className="Player__button-play icon-play" accessKey="p" aria-label="Play" />14m
+        </section>
       </section>
     );
   }
