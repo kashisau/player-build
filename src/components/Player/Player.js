@@ -43,7 +43,7 @@ class Player extends Component {
         </picture>
         <img className="Player__program-logo" src="/assets/images/drum.jpg" alt="Program logo" />
         <section className="Player__controls">
-          <button className="Player__button-play icon-play" accessKey="p" aria-label="Play" />14m
+          <button className="Player__button-play icon-play" aria-label="Play" />14m
         </section>
       </section>
     );

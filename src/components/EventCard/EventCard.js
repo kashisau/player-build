@@ -29,7 +29,8 @@ class EventCard extends Component {
       second: 1
     };
 
-    for (const [unit, secondsInUnit] of Object.entries(timeUnits)) {
+    for (const unit in timeUnits) {
+      let secondsInUnit = timeUnits[unit];
       let timeDiffInUnits = timeDiff / secondsInUnit;
       if (timeDiffInUnits > 1) {
         timeDiffInUnits = Math.ceil(timeDiffInUnits);
@@ -47,7 +48,7 @@ class EventCard extends Component {
           { this.props.description }
         </section>
         <section className="Card__actions" aria-label="event actions">
-          <button className="Button Button--large Button--plus icon-add Card__Cta" accessKey="f" onClick={() => this.props.subscribe(this.props["@id"])}>Follow this event</button>
+          <button className="Button Button--large Button--plus icon-add Card__Cta" onClick={() => this.props.subscribe(this.props["@id"])}>Follow this event</button>
         </section>
         <footer className="Card__footer" role="contentinfo">
           <section className="Card__publication-info" aria-label="Event details">
@@ -60,9 +61,9 @@ class EventCard extends Component {
           <hr />
           <section className="Card__social-sharing" aria-label="Social sharing">
             <ul className="FlatList FlatList--grid FlatList--buttons">
-              <li><a className="icon-save" title="Save this event" accessKey="a" role="button">Save</a></li>
+              <li><a className="icon-save" title="Save this event" role="button">Save</a></li>
               <li><a className="icon-comments" title="Number of comments" role="button" aria-label="comments">26</a></li>
-              <li><a className="icon-share" title="Share this event on social media" accessKey="s" role="button">Share</a></li>
+              <li><a className="icon-share" title="Share this event on social media" role="button">Share</a></li>
             </ul>
           </section>
         </footer>
