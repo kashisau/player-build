@@ -44,7 +44,7 @@ From the [Player build homepage on github.com](https://github.com/kashisau/playe
 This guide will assume the use of MacOS's Terminal app, however these steps should be applicable for Windows and Linux environments as well.
 Navigate to a directory on your local disk where you'd like to download the project to, and run the following command:
 ```
-$ git clone https://github.om/kashisau/player-build.git
+$ git clone https://github.com/kashisau/player-build.git
 ```
 This will create a new directory called `player-build`, placing the minimal custom files that are necessary to set-up this application. To change your working directory to the `player-build` directory, run the following command after the `git clone https://...` command completes:
 ```
