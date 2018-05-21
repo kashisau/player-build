@@ -11,8 +11,8 @@ class EventCard extends Component {
    * to the current time.
    * @param {string} time An ISO8601 timestamp (with timezone) to derive
    *                      the chronological difference from.
-   * @return {string} Returns a string 'n [day|hour|min|second](s) ago'
-   *                  indicating how much time has passed since.
+   * @return {JSX} Returns a <time> HTMLElement with the datetime attribute
+   *               set and reading 'n [day|hour|min|second](s) ago'
    */
   timeAgo = (time) => {
     if ( ! time)
@@ -30,11 +30,12 @@ class EventCard extends Component {
     };
 
     for (const unit in timeUnits) {
+      if ( ! timeUnits.hasOwnProperty(unit)) continue;
       let secondsInUnit = timeUnits[unit];
       let timeDiffInUnits = timeDiff / secondsInUnit;
       if (timeDiffInUnits > 1) {
         timeDiffInUnits = Math.ceil(timeDiffInUnits);
-        return `${timeDiffInUnits} ${unit}${timeDiffInUnits > 1? 's' : ''} ago`;
+        return <time dateTime={time}>{timeDiffInUnits} {unit}{timeDiffInUnits > 1? 's' : ''} ago</time>;
       }
     }
   };
